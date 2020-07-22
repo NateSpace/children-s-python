@@ -20,5 +20,20 @@ def squares(size):
 		t.rt(5)
 		t.pendown()
 		size -= 20
+def shape (sides, size):
+  for i in range(sides):
+    t.fd (size)
+    t.rt(360.0/sides)
+def shapes (sides, size, spacing):
+  while size > 0:
+    shape(sides, size)
+    size -= spacing
 
-squares(200)
+
+def spiro(sides, size, steps, degrees):
+	for i in range(360//degrees):
+		shape(sides, size)
+		t.fd(steps)
+		t.rt(degrees)
+
+spiro(sides = 5, size = 100, steps = 5, degrees = 18)
