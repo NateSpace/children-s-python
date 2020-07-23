@@ -36,4 +36,26 @@ def spiro(sides, size, steps, degrees):
 		t.fd(steps)
 		t.rt(degrees)
 
-spiro(sides = 5, size = 100, steps = 5, degrees = 18)
+#spiro(sides = 5, size = 100, steps = 10, degrees = 2)
+
+def spiral(nlines, degreees, increace):
+  #steps = 1
+  for i in range(nlines):
+    t.fd(steps)
+    t.rt(degreees)
+    steps += increace
+
+#spiral(1000, 121, 1)
+
+def sphere(size):
+  shade = 75
+  t.color (0, 0, shade)
+  while size > 0:
+		t.begin_fill()
+		shape(30, size)
+		t.end_fill()
+		size -= .5
+		shade += 5
+		t.color(0,0,shade)
+
+sphere(15)
